@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Host</title>
+  <style>
+    canvas,
+    video,
+    textarea { width: 300px; height: 200px; margin: 5px; }
+    video { background-color: #000; }
+    textarea { padding: 0; }
+
+    body > div { width: 640px; margin: auto; text-align: center; }
+  </style>
+</head>
+<body>
+  <div>
+    <div>
+      <canvas></canvas>
+      <video muted autoplay></video>
+      <video autoplay></video>
+    </div>
+    <div>
+      <button>startCamera</button>
+      <button disabled>closeConnection</button>
+    </div>
+    <textarea readonly></textarea>
+    <textarea></textarea>
+    <div>
+      <button disabled>createOffer</button>
+      <button disabled>setAnswer</button>
+    </div>
+  </div>
+
+  <script src="./sdb.js"></script>
+  <script src="./host.js"></script>
+</body>
+</html>
