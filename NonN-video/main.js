@@ -20,7 +20,7 @@ class User {
       .then(() => {
         $ready.disabled = true;
 
-        this.socket.on('join', ev => this._handleEnter(ev));
+        this.socket.on('join', ev => this._handleJoin(ev));
         this.socket.on('leave', ev => this._handleLeave(ev));
         this.socket.on('message', ev => this._handleMessage(ev));
       });
@@ -47,7 +47,7 @@ class User {
     this.socket.emit('leave');
   }
 
-  _handleEnter({ id }) {
+  _handleJoin({ id }) {
     console.log(`${id} join`);
 
     if (this.peer.has(id)) {
