@@ -27,6 +27,7 @@ class User {
   }
 
   join() {
+    if (this.myStream === null) { return; }
     this.socket.emit('join');
   }
 
