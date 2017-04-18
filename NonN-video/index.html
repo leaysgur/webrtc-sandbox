@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <title>NonN</title>
   <style>
-    video { background-color: #000; }
-    video,
-    textarea {
-      width: 300px; height: 200px;
+    video {
+      background-color: #000;
+      width: 160px; height: 100px;
     }
-    textarea { padding: 0; }
   </style>
 </head>
 <body>
@@ -17,10 +15,11 @@
     <video muted autoplay></video>
   </div>
   <div>
-    <button>startCamera</button>
-    <button>createOffer</button>
-    <button>createAnswer</button>
+    <button>ready</button>
+    <button>join</button>
+    <button>leave</button>
   </div>
+  <script src="//localhost:3000/socket.io/socket.io.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
