@@ -6,7 +6,13 @@ const pc = new RTCPeerConnection();
 navigator.mediaDevices.getUserMedia({ audio: true, video: true })
   .then(stream => {
     $video.srcObject = stream;
-    pc.addStream(stream);
+
+    if (typeof pc.addStream === 'function') {
+      pc.addStream(stream);
+    }
+    else {
+      stream.getTracks().forEach(t => pc.addTrack(t, stream));
+    }
   });
 
 pc.onicecandidate = ev => {
